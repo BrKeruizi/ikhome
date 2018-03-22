@@ -1,6 +1,6 @@
 package org.framework.tutor.service;
 
-import org.framework.tutor.domain.CourseCollect;
+import org.framework.tutor.entity.CourseCollect;
 
 import java.util.List;
 

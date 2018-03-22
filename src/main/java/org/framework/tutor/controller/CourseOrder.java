@@ -1,9 +1,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
-import org.apache.catalina.servlet4preview.http.HttpServletRequestWrapper;
-import org.apache.ibatis.annotations.Select;
-import org.framework.tutor.domain.CourseMain;
+import org.framework.tutor.entity.CourseMain;
 import org.framework.tutor.service.CourseMService;
 import org.framework.tutor.service.CourseOService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,7 +54,7 @@ public class CourseOrder {
             res += "\"state\": \"invalid\"}";
         }
         else{
-            org.framework.tutor.domain.CourseOrder courseOrder = courseOService.getUserOrder(username, cid);
+            org.framework.tutor.entity.CourseOrder courseOrder = courseOService.getUserOrder(username, cid);
             if(courseOrder == null){
                 res += "\"state\": \"valid\"}";
             }
@@ -127,14 +125,14 @@ public class CourseOrder {
         }
         else {
             Integer status = 0;
-            List<org.framework.tutor.domain.CourseOrder> courseOrders = courseOService.getMyOrder(username, status, startpos);
+            List<org.framework.tutor.entity.CourseOrder> courseOrders = courseOService.getMyOrder(username, status, startpos);
             if(courseOrders.size() == 0){
                 res = "{\"status\": \"valid\"}";
             }
             else{
                 res = "{";
                 int i = 1;
-                for (org.framework.tutor.domain.CourseOrder courseOrder : courseOrders) {
+                for (org.framework.tutor.entity.CourseOrder courseOrder : courseOrders) {
                     CourseMain courseMain = courseMService.getCourseById(courseOrder.getCid());
                     res += "\""+i+"\": ";
                     String temp = "{\"imgsrc\": \""+courseMain.getImgsrc()+"\", " +
@@ -242,7 +240,7 @@ public class CourseOrder {
             else if(status.equals("edn")){
                 state = 2;
             }
-            List<org.framework.tutor.domain.CourseOrder> courseOrders = courseOService.getMyOrder(username, state, startpos);
+            List<org.framework.tutor.entity.CourseOrder> courseOrders = courseOService.getMyOrder(username, state, startpos);
             if(courseOrders.size() == 0){
                 res = "{\"status\": \"valid\"}";
             }
@@ -250,7 +248,7 @@ public class CourseOrder {
                 res = "{";
                 int i = 1;
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                for (org.framework.tutor.domain.CourseOrder courseOrder : courseOrders) {
+                for (org.framework.tutor.entity.CourseOrder courseOrder : courseOrders) {
                     CourseMain courseMain = courseMService.getCourseById(courseOrder.getCid());
                     res += "\""+i+"\": ";
                     String temp = "{\"name\": \""+courseMain.getName()+"\", " +
@@ -293,7 +291,7 @@ public class CourseOrder {
         else{
 
             //判断用户名和订单是否对应，防止api非法调用
-            org.framework.tutor.domain.CourseOrder courseOrder = courseOService.getByIdAndUser(username, oid);
+            org.framework.tutor.entity.CourseOrder courseOrder = courseOService.getByIdAndUser(username, oid);
             if(courseOrder == null){
                 res = "{\"status\": \"invalid\"}";
             }

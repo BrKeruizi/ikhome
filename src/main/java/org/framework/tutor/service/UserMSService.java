@@ -1,6 +1,6 @@
 package org.framework.tutor.service;
 
-import org.framework.tutor.domain.UserMessage;
+import org.framework.tutor.entity.UserMessage;
 
 import java.util.List;
 

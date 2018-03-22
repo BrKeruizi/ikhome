@@ -1,6 +1,6 @@
 package org.framework.tutor.service;
 
-import org.framework.tutor.domain.CourseOrder;
+import org.framework.tutor.entity.CourseOrder;
 
 import java.util.List;
 

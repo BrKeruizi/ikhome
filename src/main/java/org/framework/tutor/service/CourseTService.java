@@ -1,6 +1,6 @@
 package org.framework.tutor.service;
 
-import org.framework.tutor.domain.CourseTreply;
+import org.framework.tutor.entity.CourseTreply;
 
 /**
  * 课程家教老师评价回复服务层接口

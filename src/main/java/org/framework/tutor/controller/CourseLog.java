@@ -45,7 +45,7 @@ public class CourseLog {
         }
         else{
             //获取课程记录
-            List<org.framework.tutor.domain.CourseLog> courseLogs  = courseLService.getUserlog(username);
+            List<org.framework.tutor.entity.CourseLog> courseLogs  = courseLService.getUserlog(username);
             if(courseLogs.size() == 0){
                 res = "{\"status\": \"ok\", \"len\": \"0\"}";
             }
@@ -53,7 +53,7 @@ public class CourseLog {
                 res = "{";
                 int i = 1;
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-                for (org.framework.tutor.domain.CourseLog courseLog : courseLogs) {
+                for (org.framework.tutor.entity.CourseLog courseLog : courseLogs) {
                     res += "\""+i+"\": ";
                     String temp = "{\"logtime\": \""+simpleDateFormat.format(courseLog.getLogtime())+"\", " +
                             "\"ctype\": \""+courseLog.getCtype()+"\", " +

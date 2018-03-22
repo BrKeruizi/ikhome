@@ -1,6 +1,6 @@
 package org.framework.tutor.service.impl;
 
-import org.framework.tutor.domain.CourseCollect;
+import org.framework.tutor.entity.CourseCollect;
 import org.framework.tutor.mapper.CourseCMapper;
 import org.framework.tutor.service.CourseCService;
 import org.springframework.beans.factory.annotation.Autowired;

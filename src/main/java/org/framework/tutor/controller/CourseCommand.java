@@ -1,7 +1,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
-import org.framework.tutor.domain.UserMain;
+import org.framework.tutor.entity.UserMain;
 import org.framework.tutor.service.CourseCMService;
 import org.framework.tutor.service.UserMService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +41,7 @@ public class CourseCommand {
         PrintWriter writer = response.getWriter();
         String res = null;
 
-        List<org.framework.tutor.domain.CourseCommand> courseCommands = courseCMService.getCourseCommand(cid, startpos);
+        List<org.framework.tutor.entity.CourseCommand> courseCommands = courseCMService.getCourseCommand(cid, startpos);
         int count = courseCommands.size();
         if(count == 0){
             res = "{\"count\": \""+courseCommands.size() + "\"}";
@@ -50,7 +50,7 @@ public class CourseCommand {
             res = "{\"count\": \"" + courseCommands.size() + "\", ";
             int i = 1;
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-            for (org.framework.tutor.domain.CourseCommand courseCommand : courseCommands) {
+            for (org.framework.tutor.entity.CourseCommand courseCommand : courseCommands) {
                 UserMain userMain = userMService.getByUser(courseCommand.getUsername());
                 res += "\"" + i + "\": ";
                 String temp = "{\"ctime\": \"" + simpleDateFormat.format(courseCommand.getCtime()) + "\", " +
@@ -85,7 +85,7 @@ public class CourseCommand {
         PrintWriter writer = response.getWriter();
         String res = null;
 
-        List<org.framework.tutor.domain.CourseCommand> courseCommands = courseCMService.getCourseCommandGod(cid);
+        List<org.framework.tutor.entity.CourseCommand> courseCommands = courseCMService.getCourseCommandGod(cid);
         int count = courseCommands.size();
         if(count == 0){
             res = "{\"count\": \""+courseCommands.size() + "\"}";
@@ -94,7 +94,7 @@ public class CourseCommand {
             res = "{\"count\": \"" + courseCommands.size() + "\", ";
             int i = 1;
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-            for (org.framework.tutor.domain.CourseCommand courseCommand : courseCommands) {
+            for (org.framework.tutor.entity.CourseCommand courseCommand : courseCommands) {
                 UserMain userMain = userMService.getByUser(courseCommand.getUsername());
                 res += "\"" + i + "\": ";
                 String temp = "{\"ctime\": \"" + simpleDateFormat.format(courseCommand.getCtime()) + "\", " +
@@ -136,7 +136,7 @@ public class CourseCommand {
             res = "{\"status\": \"invalid\"}";
         }
         else{
-            List<org.framework.tutor.domain.CourseCommand> courseCommands = courseCMService.getMyCommand(username, cid);
+            List<org.framework.tutor.entity.CourseCommand> courseCommands = courseCMService.getMyCommand(username, cid);
             int count = courseCommands.size();
             if(count == 0){
                 res = "{\"count\": \""+courseCommands.size() + "\"}";
@@ -145,7 +145,7 @@ public class CourseCommand {
                 res = "{\"count\": \"" + courseCommands.size() + "\", ";
                 int i = 1;
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-                for (org.framework.tutor.domain.CourseCommand courseCommand : courseCommands) {
+                for (org.framework.tutor.entity.CourseCommand courseCommand : courseCommands) {
                     UserMain userMain = userMService.getByUser(courseCommand.getUsername());
                     res += "\"" + i + "\": ";
                     String temp = "{\"ctime\": \"" + simpleDateFormat.format(courseCommand.getCtime()) + "\", " +

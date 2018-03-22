@@ -35,7 +35,7 @@ public class CourseTreply {
         PrintWriter writer = response.getWriter();
         String res = null;
 
-        org.framework.tutor.domain.CourseTreply courseTreply = courseTService.getCourseTreply(cid, cmid);
+        org.framework.tutor.entity.CourseTreply courseTreply = courseTService.getCourseTreply(cid, cmid);
 
         if(courseTreply == null){
             res = "{\"info\": \"null\"}";

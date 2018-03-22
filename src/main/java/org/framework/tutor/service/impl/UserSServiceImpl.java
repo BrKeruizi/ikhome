@@ -1,14 +1,13 @@
 package org.framework.tutor.service.impl;
 
-import org.framework.tutor.domain.RankTemp;
-import org.framework.tutor.domain.UserSign;
+import org.framework.tutor.entity.RankTemp;
+import org.framework.tutor.entity.UserSign;
 import org.framework.tutor.mapper.UserSMapper;
 import org.framework.tutor.service.UserSService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * 用户签到服务层实现类

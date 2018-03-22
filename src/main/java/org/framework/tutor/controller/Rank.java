@@ -1,15 +1,14 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
-import org.framework.tutor.domain.RankTemp;
-import org.framework.tutor.domain.UserMain;
-import org.framework.tutor.domain.UserSign;
+import org.framework.tutor.entity.RankTemp;
+import org.framework.tutor.entity.UserMain;
+import org.framework.tutor.entity.UserSign;
 import org.framework.tutor.service.UserMService;
 import org.framework.tutor.service.UserSService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import sun.java2d.pipe.SpanShapeRenderer;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,7 +17,6 @@ import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 /**
  * 排行榜控制类

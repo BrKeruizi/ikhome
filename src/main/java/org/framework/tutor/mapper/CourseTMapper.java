@@ -3,7 +3,7 @@ package org.framework.tutor.mapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-import org.framework.tutor.domain.CourseTreply;
+import org.framework.tutor.entity.CourseTreply;
 
 /**
  * 家教课程评价回复数据访问层

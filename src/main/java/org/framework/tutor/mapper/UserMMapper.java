@@ -1,10 +1,7 @@
 package org.framework.tutor.mapper;
 
 import org.apache.ibatis.annotations.*;
-import org.framework.tutor.domain.UserMain;
-import org.framework.tutor.domain.UserMessage;
-
-import java.util.List;
+import org.framework.tutor.entity.UserMain;
 
 /**
  * 用户主表数据访问层

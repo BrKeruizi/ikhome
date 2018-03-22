@@ -1,8 +1,7 @@
 package org.framework.tutor.controller;
 
-import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import org.framework.tutor.domain.CourseMain;
+import org.framework.tutor.entity.CourseMain;
 import org.framework.tutor.service.CourseCService;
 import org.framework.tutor.service.CourseMService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +51,7 @@ public class CourseCollect {
             res = "{\"status\": \"invalid\", \"url\": \"/forward_con/welcome\"}";
         }
         else{
-            List<org.framework.tutor.domain.CourseCollect> courseCollects = courseCService.getMyCollect(username, startpos);
+            List<org.framework.tutor.entity.CourseCollect> courseCollects = courseCService.getMyCollect(username, startpos);
             if(courseCollects.size() == 0){
                 res = "{\"status\": \"valid\", \"length\": \"0\"}";
             }
@@ -61,7 +60,7 @@ public class CourseCollect {
                 int i = 1;
                 SimpleDateFormat ysdf = new SimpleDateFormat("yyyy年");
                 SimpleDateFormat osdf = new SimpleDateFormat("MM月dd日");
-                for (org.framework.tutor.domain.CourseCollect courseCollect: courseCollects) {
+                for (org.framework.tutor.entity.CourseCollect courseCollect: courseCollects) {
                     CourseMain courseMain = courseMService.getCourseById(courseCollect.getId());
                     res += "\""+i+"\": ";
                     String temp = "{\"cyear\": \""+ysdf.format(courseCollect.getColtime())+"\", " +
@@ -97,7 +96,7 @@ public class CourseCollect {
         String res = null;
         String username = (String) session.getAttribute("username");
 
-        org.framework.tutor.domain.CourseCollect courseCollect = courseCService.getCollect(cid, username);
+        org.framework.tutor.entity.CourseCollect courseCollect = courseCService.getCollect(cid, username);
         if(courseCollect == null){
             res = "{\"status\": \"uncollect\"}";
         }

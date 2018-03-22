@@ -1,12 +1,11 @@
 package org.framework.tutor.controller;
 
-import org.framework.tutor.domain.UserVali;
+import org.framework.tutor.entity.UserVali;
 import org.framework.tutor.service.UserMService;
 import org.framework.tutor.service.UserVService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import sun.java2d.pipe.SpanShapeRenderer;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;

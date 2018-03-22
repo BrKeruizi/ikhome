@@ -1,11 +1,10 @@
 package org.framework.tutor.service.impl;
 
-import org.framework.tutor.domain.UserLog;
+import org.framework.tutor.entity.UserLog;
 import org.framework.tutor.mapper.UserLMapper;
 import org.framework.tutor.service.UserLService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 

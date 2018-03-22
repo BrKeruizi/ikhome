@@ -1,6 +1,6 @@
 package org.framework.tutor.service.impl;
 
-import org.framework.tutor.domain.UserVali;
+import org.framework.tutor.entity.UserVali;
 import org.framework.tutor.mapper.UserVMapper;
 import org.framework.tutor.service.UserVService;
 import org.springframework.beans.factory.annotation.Autowired;

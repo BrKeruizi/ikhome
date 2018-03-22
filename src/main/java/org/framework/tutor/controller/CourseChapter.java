@@ -34,14 +34,14 @@ public class CourseChapter {
         PrintWriter writer = response.getWriter();
         String res = null;
 
-        List<org.framework.tutor.domain.CourseChapter> courseChapters = courseChService.getCourseChapter(cid);
+        List<org.framework.tutor.entity.CourseChapter> courseChapters = courseChService.getCourseChapter(cid);
         if(courseChapters.size() == 0){
             res = "{\"count\": \"0\"}";
         }
         else{
             res = "{";
             int i = 1;
-            for (org.framework.tutor.domain.CourseChapter courseChapter: courseChapters) {
+            for (org.framework.tutor.entity.CourseChapter courseChapter: courseChapters) {
                 res += "\""+i+"\": ";
                 String temp = "{\"title\": \""+courseChapter.getTitle()+"\", " +
                         "\"descript\": \""+courseChapter.getDescript()+"\"}, ";

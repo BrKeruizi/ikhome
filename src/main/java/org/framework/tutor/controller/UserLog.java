@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -84,7 +83,7 @@ public class UserLog {
         }
         else{
             //获取登录记录
-            List<org.framework.tutor.domain.UserLog> userLogs  = userLService.getUserlog(username);
+            List<org.framework.tutor.entity.UserLog> userLogs  = userLService.getUserlog(username);
             if(userLogs.size() == 0){
                 res = "{\"status\": \"ok\", \"len\": \"0\"}";
             }
@@ -92,7 +91,7 @@ public class UserLog {
                 res = "{";
                 int i = 1;
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-                for (org.framework.tutor.domain.UserLog userLog : userLogs) {
+                for (org.framework.tutor.entity.UserLog userLog : userLogs) {
                     res += "\""+i+"\": ";
                     String temp = "{\"logtime\": \""+simpleDateFormat.format(userLog.getLogtime())+"\", " +
                             "\"logcity\": \""+userLog.getLogcity()+"\", " +

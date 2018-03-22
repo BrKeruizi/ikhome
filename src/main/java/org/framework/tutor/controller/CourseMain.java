@@ -1,7 +1,7 @@
 package org.framework.tutor.controller;
 
 import com.google.gson.JsonParser;
-import org.framework.tutor.domain.UserMain;
+import org.framework.tutor.entity.UserMain;
 import org.framework.tutor.service.CourseMService;
 import org.framework.tutor.service.UserMService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 /**
@@ -53,7 +51,7 @@ public class CourseMain {
 
         PrintWriter writer = response.getWriter();
         String res = null;
-        List<org.framework.tutor.domain.CourseMain> courseMains = null;
+        List<org.framework.tutor.entity.CourseMain> courseMains = null;
         //默认：不限进行排序
         if (ctype.equals("all")) {
             //时间最新排序
@@ -172,7 +170,7 @@ public class CourseMain {
         } else {
             res = "{";
             int i = 1;
-            for (org.framework.tutor.domain.CourseMain courseMain : courseMains) {
+            for (org.framework.tutor.entity.CourseMain courseMain : courseMains) {
                 UserMain userMain = userMService.getByUser(courseMain.getUsername());
                 res += "\"" + i + "\": ";
                 String temp = "{\"imgsrc\": \"" + courseMain.getImgsrc() + "\", " +
@@ -209,13 +207,13 @@ public class CourseMain {
         PrintWriter writer = response.getWriter();
         String res = null;
 
-        List<org.framework.tutor.domain.CourseMain> courseMains = courseMService.getCourseType(stype);
+        List<org.framework.tutor.entity.CourseMain> courseMains = courseMService.getCourseType(stype);
         if (courseMains.size() == 0) {
             res = "{\"status\": \"valid\", \"len\": \"0\"}";
         } else {
             res = "{";
             int i = 0;
-            for (org.framework.tutor.domain.CourseMain courseMain : courseMains) {
+            for (org.framework.tutor.entity.CourseMain courseMain : courseMains) {
                 String temp = "\"ctype" + i + "\": \"" + courseMain.getCtype() + "\", ";
                 res += temp;
                 i++;
@@ -246,13 +244,13 @@ public class CourseMain {
         PrintWriter writer = response.getWriter();
         String res = null;
 
-        List<org.framework.tutor.domain.CourseMain> courseMains = courseMService.courseSearch(keyword);
+        List<org.framework.tutor.entity.CourseMain> courseMains = courseMService.courseSearch(keyword);
         if (courseMains.size() == 0) {
             res = "{\"status\": \"valid\", \"len\": \"0\"}";
         } else {
             res = "{";
             int i = 1;
-            for (org.framework.tutor.domain.CourseMain courseMain : courseMains) {
+            for (org.framework.tutor.entity.CourseMain courseMain : courseMains) {
                 UserMain userMain = userMService.getByUser(courseMain.getUsername());
                 res += "\"" + i + "\": ";
                 String temp = "{\"imgsrc\": \"" + courseMain.getImgsrc() + "\", " +
@@ -288,7 +286,7 @@ public class CourseMain {
         PrintWriter writer = response.getWriter();
         String res = null;
 
-        org.framework.tutor.domain.CourseMain courseMain = courseMService.getCourseById(id);
+        org.framework.tutor.entity.CourseMain courseMain = courseMService.getCourseById(id);
         UserMain userMain = userMService.getByUser(courseMain.getUsername());
         res = "{\"imgsrc\": \"" + courseMain.getImgsrc() + "\", " +
                 "\"id\": \"" + courseMain.getId() + "\", " +

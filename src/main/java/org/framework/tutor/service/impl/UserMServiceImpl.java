@@ -1,6 +1,6 @@
 package org.framework.tutor.service.impl;
 
-import org.framework.tutor.domain.UserMain;
+import org.framework.tutor.entity.UserMain;
 import org.framework.tutor.mapper.UserMMapper;
 import org.framework.tutor.service.UserMService;
 import org.springframework.beans.factory.annotation.Autowired;

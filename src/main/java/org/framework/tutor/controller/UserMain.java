@@ -64,7 +64,7 @@ public class UserMain {
             res = "{\"status\": \"invalid\", \"url\": \"/forward_con/welcome\"}";
         } else {
             //服务层获取数据
-            org.framework.tutor.domain.UserMain userMain = userMService.getByUser(username);
+            org.framework.tutor.entity.UserMain userMain = userMService.getByUser(username);
             res = "{\"status\": \"valid\", \"imgsrc\": \"" + userMain.getImgsrc() + "\"}";
         }
 
@@ -93,7 +93,7 @@ public class UserMain {
             res = "{\"status\": \"invalid\", \"url\": \"/forward_con/welcome\"}";
         } else {
             //服务层获取数据
-            org.framework.tutor.domain.UserMain userMain = userMService.getByUser(username);
+            org.framework.tutor.entity.UserMain userMain = userMService.getByUser(username);
             res = "{\"status\": \"valid\", \"username\": \"" + userMain.getUsername() + "\"" +
                     ", \"nickname\": \"" + userMain.getNickname() + "\"" +
                     ", \"sex\": \"" + (userMain.getSex() == 1 ? "男" : "女") + "\"" +
@@ -250,7 +250,7 @@ public class UserMain {
         if (username == null) {
             res = "{\"status\": \"invalid\"}";
         } else {
-            org.framework.tutor.domain.UserMain userMain = userMService.getByUser(username);
+            org.framework.tutor.entity.UserMain userMain = userMService.getByUser(username);
             if (userMain == null) {
                 res = "{\"status\": \"invalid\"}";
             } else {
@@ -285,7 +285,7 @@ public class UserMain {
             } else {
 
                 //判断用户名和邮箱是否对应
-                org.framework.tutor.domain.UserMain userMain = userMService.getByUserAndEmail(username, email);
+                org.framework.tutor.entity.UserMain userMain = userMService.getByUserAndEmail(username, email);
                 if (userMain == null) {
                     res = "{\"status\": \"invalid\"}";
                 } else {
@@ -344,7 +344,7 @@ public class UserMain {
                 if (email.equals(realemail) && valicode != null && valicode.equals(realvalicode)) {
 
                     //判断邮箱和用户名是否对应
-                    org.framework.tutor.domain.UserMain userMain = userMService.getByUserAndEmail(username, email);
+                    org.framework.tutor.entity.UserMain userMain = userMService.getByUserAndEmail(username, email);
                     if (userMain == null) {
                         res = "{\"status\": \"inerr\"}";
                     } else {
@@ -369,7 +369,7 @@ public class UserMain {
                 if (phone.equals(realphone) && valicode != null && valicode.equals(realvalicode)) {
 
                     //判断手机号码和用户名是否对应
-                    org.framework.tutor.domain.UserMain userMain = userMService.getByUserAndPhone(username, phone);
+                    org.framework.tutor.entity.UserMain userMain = userMService.getByUserAndPhone(username, phone);
                     if (userMain == null) {
                         res = "{\"status\": \"inerr\"}";
                     } else {
@@ -651,7 +651,7 @@ public class UserMain {
             }
         }
         //判断用户名和手机号码是否对应
-        org.framework.tutor.domain.UserMain userMain = userMService.getByUserAndPhone(username, phone);
+        org.framework.tutor.entity.UserMain userMain = userMService.getByUserAndPhone(username, phone);
         if (userMain == null) {
             res = "{\"status\": \"invalid\"}";
         } else {

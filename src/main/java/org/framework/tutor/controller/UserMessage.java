@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -72,14 +71,14 @@ public class UserMessage {
         }
         else{
             //首先获取所有的我的通知数据
-            List<org.framework.tutor.domain.UserMessage> userMessageList = userMSService.getMyMessage(username);
+            List<org.framework.tutor.entity.UserMessage> userMessageList = userMSService.getMyMessage(username);
             if(userMessageList.size() == 0){
                 res = "{\"status\": \"valid\"}";
             }
             else {
                 res = "{";
                 int i = 1;
-                for (org.framework.tutor.domain.UserMessage userMessage: userMessageList) {
+                for (org.framework.tutor.entity.UserMessage userMessage: userMessageList) {
                     //获取指定发送通知的管理员的指定用户的未读通知总数据
                     Integer nocount = userMSService.getNoMessageCount(userMessage.getSuser(), username);
                     res += "\"" + i + "\": ";
@@ -122,7 +121,7 @@ public class UserMessage {
         }
         else{
             //首先获取所有的我的通知数据
-            List<org.framework.tutor.domain.UserMessage> userMessageList = userMSService.getMessageBySuser(suser, username);
+            List<org.framework.tutor.entity.UserMessage> userMessageList = userMSService.getMessageBySuser(suser, username);
             if(userMessageList.size() == 0){
                 res = "{\"status\": \"valid\"}";
             }
@@ -130,7 +129,7 @@ public class UserMessage {
                 res = "{";
                 int i = 1;
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-                for (org.framework.tutor.domain.UserMessage userMessage: userMessageList) {
+                for (org.framework.tutor.entity.UserMessage userMessage: userMessageList) {
                     res += "\"" + i + "\": ";
                     String temp = "{\"status\": \"" + userMessage.getStatus() + "\", " +
                             "\"stime\": \"" + simpleDateFormat.format(userMessage.getStime()) + "\", " +
@@ -206,7 +205,7 @@ public class UserMessage {
         }
         else{
             Integer sta = "ed".equals(status)?1: 0;
-            List<org.framework.tutor.domain.UserMessage> userMessages = userMSService.getMessageByStatus(suser, username, sta);
+            List<org.framework.tutor.entity.UserMessage> userMessages = userMSService.getMessageByStatus(suser, username, sta);
             if(userMessages.size() == 0){
                 res = "{\"status\": \"valid\"}";
             }
@@ -214,7 +213,7 @@ public class UserMessage {
                 res = "{";
                 int i = 1;
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-                for (org.framework.tutor.domain.UserMessage userMessage: userMessages) {
+                for (org.framework.tutor.entity.UserMessage userMessage: userMessages) {
                     res += "\"" + i + "\": ";
                     String temp = "{\"status\": \"" + userMessage.getStatus() + "\", " +
                             "\"stime\": \"" + simpleDateFormat.format(userMessage.getStime()) + "\", " +

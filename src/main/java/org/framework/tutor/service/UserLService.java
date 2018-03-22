@@ -1,6 +1,6 @@
 package org.framework.tutor.service;
 
-import org.framework.tutor.domain.UserLog;
+import org.framework.tutor.entity.UserLog;
 
 import java.util.List;
 

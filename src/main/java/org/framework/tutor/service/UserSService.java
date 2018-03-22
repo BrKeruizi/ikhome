@@ -1,10 +1,9 @@
 package org.framework.tutor.service;
 
-import org.framework.tutor.domain.RankTemp;
-import org.framework.tutor.domain.UserSign;
+import org.framework.tutor.entity.RankTemp;
+import org.framework.tutor.entity.UserSign;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * 用户签到服务层接口

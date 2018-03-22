@@ -1,7 +1,7 @@
 package org.framework.tutor.mapper;
 
 import org.apache.ibatis.annotations.*;
-import org.framework.tutor.domain.UserMessage;
+import org.framework.tutor.entity.UserMessage;
 
 import java.util.List;
 

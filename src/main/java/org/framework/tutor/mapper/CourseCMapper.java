@@ -1,7 +1,7 @@
 package org.framework.tutor.mapper;
 
 import org.apache.ibatis.annotations.*;
-import org.framework.tutor.domain.CourseCollect;
+import org.framework.tutor.entity.CourseCollect;
 
 import java.util.List;
 

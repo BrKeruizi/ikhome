@@ -2,7 +2,7 @@ package org.framework.tutor.controller;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParser;
-import org.framework.tutor.domain.UserMain;
+import org.framework.tutor.entity.UserMain;
 import org.framework.tutor.service.UserMService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

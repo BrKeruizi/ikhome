@@ -1,4 +1,4 @@
-package org.framework.tutor.domain;
+package org.framework.tutor.entity;
 
 import java.io.Serializable;
 

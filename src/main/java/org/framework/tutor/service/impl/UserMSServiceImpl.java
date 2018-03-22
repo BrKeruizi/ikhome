@@ -1,6 +1,6 @@
 package org.framework.tutor.service.impl;
 
-import org.framework.tutor.domain.UserMessage;
+import org.framework.tutor.entity.UserMessage;
 import org.framework.tutor.mapper.UserMSMapper;
 import org.framework.tutor.service.UserMSService;
 import org.springframework.beans.factory.annotation.Autowired;

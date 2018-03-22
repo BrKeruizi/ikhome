@@ -1,12 +1,11 @@
 package org.framework.tutor.service.impl;
 
-import org.framework.tutor.domain.CourseChapter;
+import org.framework.tutor.entity.CourseChapter;
 import org.framework.tutor.mapper.CourseChMapper;
 import org.framework.tutor.service.CourseChService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**

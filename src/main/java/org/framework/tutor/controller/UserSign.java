@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -50,13 +49,13 @@ public class UserSign {
             StringBuffer temp = new StringBuffer(monI.toString());
             String monthstr = temp.length()==1?"-0"+temp.toString()+"-": "-"+temp.toString()+"-";
 
-            List<org.framework.tutor.domain.UserSign> userSigns = userSService.getMySignNow(username, monthstr);
+            List<org.framework.tutor.entity.UserSign> userSigns = userSService.getMySignNow(username, monthstr);
             if(userSigns.size() == 0){
                 res = "{\"status\": \"valid\"}";
             }
             else{
                 StringBuffer date = new StringBuffer(",");
-                for (org.framework.tutor.domain.UserSign userSign: userSigns) {
+                for (org.framework.tutor.entity.UserSign userSign: userSigns) {
                     date.append(userSign.getStime().getDate() + ",");
                 }
                 res = new StringBuffer("{\"date\": \"").append(date).append("\"}")

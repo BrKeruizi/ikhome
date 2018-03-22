@@ -1,4 +1,4 @@
-package org.framework.tutor.domain;
+package org.framework.tutor.entity;
 
 /**
  * 排行榜单临时用实体类

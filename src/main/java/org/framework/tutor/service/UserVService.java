@@ -1,6 +1,6 @@
 package org.framework.tutor.service;
 
-import org.framework.tutor.domain.UserVali;
+import org.framework.tutor.entity.UserVali;
 
 /**
  * 注册验证服务层接口

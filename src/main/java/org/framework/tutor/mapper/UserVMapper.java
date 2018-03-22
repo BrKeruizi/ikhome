@@ -1,9 +1,7 @@
 package org.framework.tutor.mapper;
 
-import java.util.List;
-
 import org.apache.ibatis.annotations.*;
-import org.framework.tutor.domain.UserVali;
+import org.framework.tutor.entity.UserVali;
 
 /**
  *  注册验证数据访问层

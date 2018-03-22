@@ -1,6 +1,6 @@
 package org.framework.tutor.service;
 
-import org.framework.tutor.domain.UserMain;
+import org.framework.tutor.entity.UserMain;
 
 /**
  * 用户主表服务层接口

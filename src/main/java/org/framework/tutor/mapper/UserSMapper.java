@@ -4,11 +4,10 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-import org.framework.tutor.domain.RankTemp;
-import org.framework.tutor.domain.UserSign;
+import org.framework.tutor.entity.RankTemp;
+import org.framework.tutor.entity.UserSign;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * 用户签到数据访问层

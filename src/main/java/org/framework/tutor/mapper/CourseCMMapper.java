@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-import org.framework.tutor.domain.CourseCommand;
+import org.framework.tutor.entity.CourseCommand;
 
 import java.util.List;
 
