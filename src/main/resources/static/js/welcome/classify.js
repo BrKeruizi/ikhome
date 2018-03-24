@@ -1,5 +1,5 @@
 $(function() {
-    //获取系统时间-----------------
+  /*  //获取系统时间-----------------
     Date.prototype.format = function (format) {
         var o = {
             "M+": this.getMonth() + 1, //month
@@ -18,9 +18,9 @@ $(function() {
         return format;
     }
 
-    /**
+    /!**
      * 判断当前用户是否登录
-     */
+     *!/
     var login_check = function(){
 
         $("nav ul.navbar-right").text("");
@@ -110,9 +110,9 @@ $(function() {
     };
     login_check();
 
-    /**
+    /!**
      * 点击注销按钮的功能实现
-     */
+     *!/
     var logoff_btn = function () {
 
         if (window.confirm("确认退出登录吗？")) {
@@ -131,7 +131,7 @@ $(function() {
             });
         }
     };
-    $(document).on("click", ".navbar-right .nav-logoff a", logoff_btn);
+    $(document).on("click", ".navbar-right .nav-logoff a", logoff_btn);*/
 
 
 
@@ -139,7 +139,7 @@ $(function() {
 
     //--------------------------顶部类别点击事件的实现----------------------------------
     /**
-     * 默认异步加载小学家教/不限类别/最新发布
+     * 默认异步加载/不限类别/最新发布
      */
     var glo_stype = "";
     var glo_ctype = "";

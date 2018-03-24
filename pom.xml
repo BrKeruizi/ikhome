@@ -129,9 +129,9 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <!-- 开启热部署所必须的 -->
-                <configuration>
-                    <fork>true</fork>
-                </configuration>
+                <!--<scope>provided</scope>-->
+                <!--optional我没弄明白，都说必须为true，但我测试true，false，不加都可以-->
+                <optional>true</optional>
             </plugin>
         </plugins>
     </build>

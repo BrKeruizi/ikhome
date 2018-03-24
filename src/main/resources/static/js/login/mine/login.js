@@ -126,8 +126,8 @@
             }
         });
     };
-    $(".button_class_submit").click(login_all_check);
-
+    // $(".button_class_submit").click(login_all_check);
+    $(document).on("click", ".button_class_submit", login_all_check);
     /**
      * 点击记住我按钮事件
      */
